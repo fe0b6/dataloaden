@@ -98,12 +98,6 @@ func (l *{{.LoaderName}}) LoadThunk(key {{.KeyType}}) func() ({{.ValType}}, erro
 			err = batch.error[pos]
 		}
 
-		if err == nil {
-			l.mu.Lock()
-			l.unsafeSet(key, data)
-			l.mu.Unlock()
-		}
-
 		return data, err
 	}
 }
